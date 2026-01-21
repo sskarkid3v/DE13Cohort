@@ -27,6 +27,10 @@ class Config:
         self.batch_size = env_int("BATCH_SIZE", 500)
         self.max_retries = env_int("MAX_RETRIES", 5)
         self.retry_backoff_seconds = env_int("RETRY_BACKOFF_SECONDS", 2)
+        
+        self.use_copy = env_int("USE_COPY", 1) == 1
+        self.lookback_hours = env_int("LOOKBACK_HOURS", 24)
+        self.statement_timeout_ms = env_int("STATEMENT_TIMEOUT_MS", 30000)
 
     def dsn(self) -> str:
         # psycopg DSN
