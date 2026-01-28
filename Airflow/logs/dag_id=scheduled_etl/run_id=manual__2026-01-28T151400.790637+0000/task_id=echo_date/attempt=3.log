@@ -1,0 +1,37 @@
+[2026-01-28T15:14:25.150+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-28T15:14:25.179+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: scheduled_etl.echo_date manual__2026-01-28T15:14:00.790637+00:00 [queued]>
+[2026-01-28T15:14:25.186+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: scheduled_etl.echo_date manual__2026-01-28T15:14:00.790637+00:00 [queued]>
+[2026-01-28T15:14:25.187+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 3
+[2026-01-28T15:14:25.197+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): echo_date> on 2026-01-28 15:14:00.790637+00:00
+[2026-01-28T15:14:25.207+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=3465) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-01-28T15:14:25.207+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'scheduled_etl', 'echo_date', 'manual__2026-01-28T15:14:00.790637+00:00', '--job-id', '776', '--raw', '--subdir', 'DAGS_FOLDER/etl_scheduled.py', '--cfg-path', '/tmp/tmpwf3dh_6p']
+[2026-01-28T15:14:25.209+0000] {standard_task_runner.py:64} INFO - Started process 3468 to run task
+[2026-01-28T15:14:25.209+0000] {standard_task_runner.py:91} INFO - Job 776: Subtask echo_date
+[2026-01-28T15:14:25.273+0000] {task_command.py:426} INFO - Running <TaskInstance: scheduled_etl.echo_date manual__2026-01-28T15:14:00.790637+00:00 [running]> on host 425adaa07389
+[2026-01-28T15:14:25.347+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='scheduled_etl' AIRFLOW_CTX_TASK_ID='echo_date' AIRFLOW_CTX_EXECUTION_DATE='2026-01-28T15:14:00.790637+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-28T15:14:00.790637+00:00'
+[2026-01-28T15:14:25.349+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-28T15:14:25.360+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-01-28T15:14:25.361+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cat /tmp/raw.txt | this_command_does_not_exist > /tmp/transformed.txt']
+[2026-01-28T15:14:25.371+0000] {subprocess.py:86} INFO - Output:
+[2026-01-28T15:14:25.372+0000] {subprocess.py:93} INFO - /usr/bin/bash: line 1: this_command_does_not_exist: command not found
+[2026-01-28T15:14:25.373+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2026-01-28T15:14:25.374+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-28T15:14:25.384+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2026-01-28T15:14:25.388+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=scheduled_etl, task_id=echo_date, run_id=manual__2026-01-28T15:14:00.790637+00:00, execution_date=20260128T151400, start_date=20260128T151425, end_date=20260128T151425
+[2026-01-28T15:14:25.400+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 776 for task echo_date (Bash command failed. The command returned a non-zero exit code 127.; 3468)
+[2026-01-28T15:14:25.423+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-01-28T15:14:25.441+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-01-28T15:14:25.445+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

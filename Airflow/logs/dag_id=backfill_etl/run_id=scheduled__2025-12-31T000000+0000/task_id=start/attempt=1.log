@@ -1,0 +1,21 @@
+[2026-01-28T15:21:16.885+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-28T15:21:16.907+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: backfill_etl.start scheduled__2025-12-31T00:00:00+00:00 [queued]>
+[2026-01-28T15:21:16.914+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: backfill_etl.start scheduled__2025-12-31T00:00:00+00:00 [queued]>
+[2026-01-28T15:21:16.915+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-01-28T15:21:16.923+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): start> on 2025-12-31 00:00:00+00:00
+[2026-01-28T15:21:16.928+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=4781) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-01-28T15:21:16.929+0000] {standard_task_runner.py:64} INFO - Started process 4782 to run task
+[2026-01-28T15:21:16.928+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'backfill_etl', 'start', 'scheduled__2025-12-31T00:00:00+00:00', '--job-id', '1080', '--raw', '--subdir', 'DAGS_FOLDER/backfill.py', '--cfg-path', '/tmp/tmpd9_9f8ia']
+[2026-01-28T15:21:16.930+0000] {standard_task_runner.py:91} INFO - Job 1080: Subtask start
+[2026-01-28T15:21:16.986+0000] {task_command.py:426} INFO - Running <TaskInstance: backfill_etl.start scheduled__2025-12-31T00:00:00+00:00 [running]> on host 425adaa07389
+[2026-01-28T15:21:17.047+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='backfill_etl' AIRFLOW_CTX_TASK_ID='start' AIRFLOW_CTX_EXECUTION_DATE='2025-12-31T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-31T00:00:00+00:00'
+[2026-01-28T15:21:17.048+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-28T15:21:17.058+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-01-28T15:21:17.059+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo "raw_data=hello" > /tmp/raw.txt']
+[2026-01-28T15:21:17.064+0000] {subprocess.py:86} INFO - Output:
+[2026-01-28T15:21:17.066+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-01-28T15:21:17.066+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-28T15:21:17.083+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=backfill_etl, task_id=start, run_id=scheduled__2025-12-31T00:00:00+00:00, execution_date=20251231T000000, start_date=20260128T152116, end_date=20260128T152117
+[2026-01-28T15:21:17.103+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-01-28T15:21:17.118+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-28T15:21:17.120+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
