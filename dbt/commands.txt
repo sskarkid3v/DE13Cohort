@@ -1,0 +1,42 @@
+#central config file for dbt database configuration
+cat ~/.dbt/profiles.yml
+
+#dbt-core and postgres adapter installation
+pip install --upgrade pip
+pip install dbt-postgres
+
+#initializing project
+dbt init <<project_name>>
+
+#testing connection
+dbt debug
+
+#seeds data upload
+dbt seed
+
+#running your models
+dbt run
+
+#flow of dbt execution
+1. scans the models one at a time
+2. creates a dependency link between models
+3. using this link creates a DAG automatically
+4. creates models based on the DAG
+
+
+#command to test all the tests
+dbt test
+
+#specific model test
+dbt test --select <<model_name>>
+
+#create documentation
+dbt docs generate
+#serving web ui for documentation
+dbt docs serve
+
+#deletes build artifacts and caches
+dbt clean
+
+#parses your dbt project without running any sql in the database
+dbt parse
