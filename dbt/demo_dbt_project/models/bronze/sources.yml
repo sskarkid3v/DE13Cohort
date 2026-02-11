@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+    tables:
+      - name: customers
+      - name: branches
+      - name: accounts
+      - name: transactions
+      - name: customers_updates

@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "staged customers"
+    columns:
+      - name: id
+        description: "customer id"
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: "customer name"
+      - name: country
+        description: "customer country"
+      - name: is_local
+        description: "boolean flag indicating if the customer is local (from Nepal)"
