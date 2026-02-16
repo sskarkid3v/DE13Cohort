@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: stg_weather
+    description: "Staging model that transforms raw weather data from the bronze layer, preparing it for analysis in the silver layer."
+    columns:
+      - name: day
+        tests: [not_null, unique]

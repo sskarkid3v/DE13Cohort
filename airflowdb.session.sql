@@ -1,0 +1,1 @@
+drop table bronze.weather_raw

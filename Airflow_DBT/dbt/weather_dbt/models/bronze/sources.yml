@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+    tables:
+      - name: weather_raw
+        description: "Raw weather data ingested from the API, stored in the bronze layer."
+        

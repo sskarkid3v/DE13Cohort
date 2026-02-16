@@ -1,0 +1,12 @@
+weather_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: warehouse
+      port: 5432
+      user: dbuser
+      password: depass
+      dbname: analytics
+      schema: public
+      thread: 2

@@ -1,0 +1,17 @@
+[2026-02-16T15:37:16.989+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-02-16T15:37:17.004+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_dbt_pipeline.extract_load_weather_to_bronze manual__2026-02-16T15:37:15.517994+00:00 [queued]>
+[2026-02-16T15:37:17.014+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_dbt_pipeline.extract_load_weather_to_bronze manual__2026-02-16T15:37:15.517994+00:00 [queued]>
+[2026-02-16T15:37:17.016+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2026-02-16T15:37:17.028+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_load_weather_to_bronze> on 2026-02-16 15:37:15.517994+00:00
+[2026-02-16T15:37:17.032+0000] {standard_task_runner.py:72} INFO - Started process 174 to run task
+[2026-02-16T15:37:17.035+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_dbt_pipeline', 'extract_load_weather_to_bronze', 'manual__2026-02-16T15:37:15.517994+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/weather_dbt_pipeline.py', '--cfg-path', '/tmp/tmp_9xhjbz2']
+[2026-02-16T15:37:17.038+0000] {standard_task_runner.py:105} INFO - Job 13: Subtask extract_load_weather_to_bronze
+[2026-02-16T15:37:17.110+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_dbt_pipeline.extract_load_weather_to_bronze manual__2026-02-16T15:37:15.517994+00:00 [running]> on host 717848ee540b
+[2026-02-16T15:37:17.184+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_dbt_pipeline' AIRFLOW_CTX_TASK_ID='extract_load_weather_to_bronze' AIRFLOW_CTX_EXECUTION_DATE='2026-02-16T15:37:15.517994+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-16T15:37:15.517994+00:00'
+[2026-02-16T15:37:17.187+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-02-16T15:37:18.240+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-02-16T15:37:18.248+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-02-16T15:37:18.250+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=weather_dbt_pipeline, task_id=extract_load_weather_to_bronze, run_id=manual__2026-02-16T15:37:15.517994+00:00, execution_date=20260216T153715, start_date=20260216T153717, end_date=20260216T153718
+[2026-02-16T15:37:18.293+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-02-16T15:37:18.312+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-16T15:37:18.315+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

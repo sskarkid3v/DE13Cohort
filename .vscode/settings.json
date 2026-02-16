@@ -10,6 +10,17 @@
             "database": "de_db",
             "username": "de_user",
             "password": "de_pass"
+        },
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5454,
+            "driver": "PostgreSQL",
+            "name": "airflowdb",
+            "database": "analytics",
+            "username": "dbuser",
+            "password": "depass"
         }
     ]
 }
