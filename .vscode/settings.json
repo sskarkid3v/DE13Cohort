@@ -21,6 +21,17 @@
             "database": "analytics",
             "username": "dbuser",
             "password": "depass"
+        },
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "localdb",
+            "database": "abnk",
+            "username": "de",
+            "password": "de"
         }
     ]
 }

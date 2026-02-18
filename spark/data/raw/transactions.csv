@@ -1,0 +1,7 @@
+transaction_id,account_id,amount,currency,merchant,category,txn_ts,status,channel,city,country
+tx_0001,1001,120.50,NPR,Ncell,telecom,2025-12-01 09:10:00,APPROVED,mobile,Kathmandu,Nepal
+tx_0002,1001,950.00,NPR,Bhatbhateni,grocery,2025-12-01 18:45:00,APPROVED,pos,Kathmandu,Nepal
+tx_0003,1002,2000.00,NPR,Daraz,ecommerce,2025-12-02 12:02:00,DECLINED,web,Lalitpur,Nepal
+tx_0004,1003,75.25,NPR,Pathao,transport,2025-12-02 08:20:00,APPROVED,mobile,Kathmandu,Nepal
+tx_0005,1004,15000.00,NPR,Apple,shopping,2025-12-03 21:10:00,APPROVED,web,Biratnagar,Nepal
+tx_0006,1001,120.50,NPR,Ncell,telecom,2025-12-01 09:10:00,APPROVED,mobile,Kathmandu,Nepal
