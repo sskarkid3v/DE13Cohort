@@ -1,0 +1,11 @@
+#get inside the container
+docker exec -it kafka bash
+
+#list topics
+kafka-topics --list --bootstrap-server localhost:9092
+
+#create topic
+kafka-topics --create --topic banking.transactions --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
+
+#describing the topic
+kafka-topics --describe --topic banking.transactions --bootstrap-server localhost:9092
