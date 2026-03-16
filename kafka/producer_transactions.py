@@ -3,6 +3,7 @@ import random
 import time
 from datetime import datetime
 from kafka import KafkaProducer
+import uuid
 
 #configure the Kafka producer
 producer = KafkaProducer(bootstrap_servers='localhost:9092',
@@ -14,10 +15,14 @@ CURRENCIES = ['USD', 'EUR', 'NPR']
 
 def generate_transaction():
     transaction = {
+        "event_id": str(uuid.uuid4()),
         "account_id": random.choice(ACCOUNT_IDS),
-        "type": random.choice(TRANSACTION_TYPES),
+        "transaction_type": random.choice(TRANSACTION_TYPES),
         "amount": round(random.uniform(10, 1000), 2),
         "currency": random.choice(CURRENCIES),
+        "channel": random.choice(['ATM', 'ONLINE', 'BRANCH']),
+        "merchant": random.choice(['Amazon', 'Walmart', 'Target', 'Local Store']),
+        "location": random.choice(['New York', 'Los Angeles', 'Chicago', 'Houston']),
         "timestamp": datetime.utcnow().isoformat()+"Z"
     }
     return transaction

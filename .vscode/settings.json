@@ -32,6 +32,17 @@
             "database": "abnk",
             "username": "de",
             "password": "de"
+        },
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "kafka",
+            "database": "mydb",
+            "username": "user",
+            "password": "password"
         }
     ]
 }
